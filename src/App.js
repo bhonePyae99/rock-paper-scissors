@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import PlayInput from "./components/PlayInput";
+import ScoreDisplay from "./components/ScoreDisplay";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full bg-veryDarkGrayishCyan h-screen flex flex-col p-6 items-center">
+      <ScoreDisplay />
+      <PlayInput />
+
+      <div className="w-full flex justify-center md:justify-end mr-4 mt-20 md:mt-5">
+        <button className="py-2 uppercase text-white font-bold border-lightGrayishCyan border-2 rounded-lg px-10">
+          Rules
+        </button>
+      </div>
     </div>
   );
 }
