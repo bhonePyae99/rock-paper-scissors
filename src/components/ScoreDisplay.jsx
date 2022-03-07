@@ -1,6 +1,5 @@
 import logo from "../images/logo.svg";
 const ScoreDisplay = ({ score }) => {
-  console.log(score);
   return (
     <div className="md:w-1/2 w-full mt-10 text-black p-4 rounded-md items-center flex justify-between border-2 mx-auto">
       <img src={logo} className="md:h-[100px] h-16" alt="" />
