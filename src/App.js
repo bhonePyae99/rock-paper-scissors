@@ -1,4 +1,5 @@
 import PlayInput from "./components/PlayInput";
+import Rules from "./components/Rules";
 import ScoreDisplay from "./components/ScoreDisplay";
 import PlayResult from "./components/PlayResult";
 import PlayerContext from "./contexts/PlayerContext";
@@ -9,6 +10,7 @@ function App() {
   const [computer, setComputer] = useState({});
   const [result, setResult] = useState("");
   const [score, setScore] = useState(0);
+  const [showRules, setShowRules] = useState(false);
 
   useEffect(() => {
     if (result === "win") {
@@ -43,7 +45,7 @@ function App() {
       } else {
         setResult("win");
       }
-    }, 2000);
+    }, 1000);
   }, [player]);
 
   const restart = () => {
@@ -67,8 +69,14 @@ function App() {
             restart={restart}
           />
         )}
+        {showRules && <Rules setShowRules={setShowRules} />}
         <div>
-          <button className="py-2 absolute bottom-2 md:right-2 right-1/2 translate-x-1/2 md:translate-x-0 uppercase text-white font-bold border-lightGrayishCyan border-2 rounded-lg px-10">
+          <button
+            className="py-2 absolute bottom-2 md:right-2 right-1/2 translate-x-1/2 md:translate-x-0 uppercase text-white font-bold border-lightGrayishCyan border-2 rounded-lg px-10"
+            onClick={() => {
+              setShowRules(true);
+            }}
+          >
             Rules
           </button>
         </div>
